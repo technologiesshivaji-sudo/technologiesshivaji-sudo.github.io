@@ -6,305 +6,501 @@
 
 <title>Shivaji Technologies | Power & Digital Centre</title>
 
-<meta name="description" content="Shivaji Technologies, Nabadwip - Battery, Inverter, Solar, E-Rickshaw Battery and Digital Services. Open 9 AM to 8 PM.">
-<meta name="keywords" content="Shivaji Technologies, Battery, Inverter, Solar, E Rickshaw Battery, Digital Services, Nabadwip">
+<meta name="description" content="Shivaji Technologies, Nabadwip - Battery, Inverter, Solar, E-Rickshaw Battery, Online Services, Printing, Scanning and Digital Services.">
+
+<meta name="keywords" content="Shivaji Technologies, Nabadwip, Battery, Inverter, Solar, E-Rickshaw Battery, Digital Services">
+
 <meta name="author" content="Shivaji Technologies">
 
-<meta property="og:title" content="Shivaji Technologies">
-<meta property="og:description" content="Power & Digital Centre in Nabadwip">
-<meta property="og:type" content="website">
-
 <style>
+:root{
+  --navy:#07142f;
+  --navy2:#0b1d42;
+  --blue:#123b82;
+  --orange:#ffad00;
+  --orange2:#ff7a00;
+  --white:#ffffff;
+  --text:#172033;
+  --muted:#667085;
+  --light:#f6f8fc;
+  --border:#e7eaf0;
+  --green:#20c76a;
+  --shadow:0 18px 50px rgba(4,18,48,.12);
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  scroll-behavior:smooth;
 }
 
-:root{
-  --primary:#0b1220;
-  --blue:#1d4ed8;
-  --gold:#ffb000;
-  --green:#16a34a;
-  --light:#f6f8fc;
-  --text:#172033;
-  --muted:#667085;
-  --white:#ffffff;
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--light);
+  font-family:Arial, Helvetica, sans-serif;
   color:var(--text);
-  line-height:1.6;
+  background:#fff;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
 .container{
-  width:90%;
-  max-width:1200px;
+  width:min(1120px,92%);
   margin:auto;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(11,18,32,.97);
-  box-shadow:0 4px 20px rgba(0,0,0,.15);
+  background:rgba(7,20,47,.97);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
 }
 
 .navbar{
-  min-height:72px;
+  min-height:78px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+.logo{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
 }
 
-.logo img {
-  width: 200px;
-  height: 65px;
-  object-fit: contain;
-  display: block;
-  background: white;
-  border-radius: 8px;
-  padding: 3px 6px;
-  box-sizing: border-box;
-}
-
-.logo span{
-  color:var(--gold);
+.logo img{
+  width:185px;
+  height:62px;
+  object-fit:contain;
+  display:block;
+  background:#fff;
+  border-radius:9px;
+  padding:3px 7px;
 }
 
 nav{
   display:flex;
-  gap:24px;
+  align-items:center;
+  gap:28px;
 }
 
 nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:600;
+  color:#fff;
   font-size:14px;
+  font-weight:700;
+  transition:.25s;
 }
 
 nav a:hover{
-  color:var(--gold);
+  color:var(--orange);
 }
 
-/* HERO */
+.nav-btn{
+  background:var(--orange);
+  color:#111!important;
+  padding:11px 17px;
+  border-radius:9px;
+}
+
+.nav-btn:hover{
+  background:#ffc13a;
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:transparent;
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
 
 .hero{
-  min-height:88vh;
-  display:flex;
-  align-items:center;
-  color:white;
+  position:relative;
+  overflow:hidden;
   background:
-    radial-gradient(circle at 80% 20%,rgba(29,78,216,.5),transparent 35%),
-    linear-gradient(135deg,#050b16,#102a63);
-  padding:70px 0;
+    radial-gradient(circle at 85% 15%,rgba(31,91,190,.55),transparent 32%),
+    radial-gradient(circle at 20% 90%,rgba(255,122,0,.12),transparent 28%),
+    linear-gradient(135deg,#06122d,#0a2350 60%,#092d6c);
+  color:#fff;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  right:-180px;
+  bottom:-180px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
 }
 
 .hero-content{
-  max-width:850px;
+  min-height:650px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  gap:40px;
+  padding:70px 0;
 }
 
 .badge{
-  display:inline-block;
-  background:rgba(255,176,0,.15);
-  border:1px solid rgba(255,176,0,.5);
-  color:#ffd15c;
-  padding:8px 14px;
-  border-radius:30px;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 15px;
+  border:1px solid rgba(255,173,0,.5);
+  background:rgba(255,173,0,.09);
+  color:#ffc33c;
+  border-radius:999px;
   font-size:13px;
-  font-weight:700;
-  margin-bottom:20px;
+  font-weight:800;
+  margin-bottom:22px;
 }
 
 .hero h1{
-  font-size:clamp(42px,7vw,78px);
-  line-height:1;
-  margin-bottom:18px;
+  font-size:clamp(46px,7vw,78px);
+  line-height:.95;
+  letter-spacing:-3px;
+  margin-bottom:22px;
 }
 
 .hero h1 span{
-  color:var(--gold);
+  display:block;
+  color:var(--orange);
 }
 
 .hero h2{
-  font-size:clamp(20px,3vw,32px);
+  font-size:clamp(21px,3vw,30px);
+  line-height:1.2;
   margin-bottom:18px;
 }
 
 .hero p{
-  max-width:760px;
-  color:#dbe4f5;
-  font-size:18px;
-  margin-bottom:30px;
+  max-width:670px;
+  color:#d8e2f4;
+  font-size:17px;
+  line-height:1.75;
 }
 
-.buttons{
+.hero-buttons{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
+  margin-top:30px;
 }
 
 .btn{
-  display:inline-block;
-  padding:14px 22px;
-  border-radius:9px;
-  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:52px;
+  padding:0 22px;
+  border-radius:10px;
   font-weight:800;
   transition:.25s;
 }
 
-.btn:hover{
-  transform:translateY(-3px);
+.btn-primary{
+  background:var(--orange);
+  color:#111;
 }
 
-.btn-primary{
-  background:var(--gold);
-  color:#111827;
+.btn-primary:hover{
+  transform:translateY(-2px);
+  background:#ffc13a;
+}
+
+.btn-white{
+  background:#fff;
+  color:#101828;
+}
+
+.btn-white:hover{
+  transform:translateY(-2px);
 }
 
 .btn-whatsapp{
-  background:#25d366;
-  color:white;
+  background:var(--green);
+  color:#fff;
 }
 
-.btn-call{
-  background:white;
-  color:#111827;
+.btn-whatsapp:hover{
+  transform:translateY(-2px);
+  background:#16b85c;
 }
 
-/* TRUST BAR */
+/* HERO CARD */
+
+.hero-card{
+  position:relative;
+  z-index:2;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:24px;
+  padding:28px;
+  box-shadow:0 25px 70px rgba(0,0,0,.2);
+  backdrop-filter:blur(10px);
+}
+
+.hero-card-title{
+  font-size:14px;
+  font-weight:800;
+  color:#ffc13a;
+  margin-bottom:18px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.hero-services{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.hero-service{
+  padding:17px;
+  border-radius:14px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.09);
+}
+
+.hero-service strong{
+  display:block;
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+.hero-service small{
+  color:#c6d2e7;
+  line-height:1.4;
+}
+
+/* ================= TRUST BAR ================= */
 
 .trust{
-  background:white;
-  padding:22px 0;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
+  background:#fff;
+  box-shadow:0 10px 35px rgba(0,0,0,.06);
+  position:relative;
+  z-index:5;
 }
 
 .trust-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  text-align:center;
+  padding:25px 0;
 }
 
 .trust-item{
-  font-weight:700;
+  text-align:center;
+  padding:8px 15px;
+  border-right:1px solid var(--border);
+}
+
+.trust-item:last-child{
+  border-right:0;
+}
+
+.trust-icon{
+  font-size:24px;
+  margin-bottom:7px;
+}
+
+.trust-item strong{
+  display:block;
   font-size:14px;
 }
 
-/* SECTIONS */
+.trust-item span{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:4px;
+}
+
+/* ================= SECTION ================= */
 
 section{
-  padding:80px 0;
+  padding:90px 0;
 }
 
-.section-title{
+.section-head{
+  max-width:700px;
+  margin:0 auto 45px;
   text-align:center;
-  margin-bottom:45px;
 }
 
-.section-title h2{
-  font-size:38px;
-  margin-bottom:8px;
+.section-kicker{
+  color:#e58b00;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  margin-bottom:10px;
 }
 
-.section-title p{
+.section-head h2{
+  color:var(--navy);
+  font-size:clamp(30px,5vw,46px);
+  line-height:1.1;
+  margin-bottom:13px;
+}
+
+.section-head p{
   color:var(--muted);
+  line-height:1.7;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 
 .services{
-  background:white;
+  background:var(--light);
 }
 
 .service-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:20px;
+  gap:18px;
 }
 
 .service-card{
-  background:#f8fafc;
-  border:1px solid #e5e7eb;
-  border-radius:16px;
-  padding:30px 20px;
-  text-align:center;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:26px;
   transition:.3s;
 }
 
 .service-card:hover{
   transform:translateY(-7px);
-  box-shadow:0 15px 35px rgba(0,0,0,.1);
-  border-color:var(--gold);
+  box-shadow:var(--shadow);
+  border-color:#ffd98a;
 }
 
-.icon{
-  font-size:45px;
-  margin-bottom:14px;
+.service-icon{
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:#fff4d9;
+  font-size:25px;
+  margin-bottom:18px;
 }
 
 .service-card h3{
-  margin-bottom:8px;
+  color:var(--navy);
+  font-size:18px;
+  margin-bottom:9px;
 }
 
 .service-card p{
   color:var(--muted);
   font-size:14px;
+  line-height:1.65;
 }
 
-/* ABOUT */
-
-.about{
-  background:#eef3ff;
-}
+/* ================= ABOUT ================= */
 
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:50px;
+  gap:55px;
   align-items:center;
 }
 
-.about h2{
-  font-size:40px;
+.about-content h2{
+  color:var(--navy);
+  font-size:clamp(32px,5vw,46px);
   margin-bottom:18px;
 }
 
-.about p{
-  color:#475467;
+.about-content p{
+  color:var(--muted);
+  line-height:1.8;
   margin-bottom:15px;
 }
 
-.feature-list{
+.check-list{
   display:grid;
-  gap:12px;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+  margin-top:24px;
 }
 
-.feature{
-  background:white;
-  border-radius:12px;
-  padding:17px;
+.check{
+  padding:13px 14px;
+  border-radius:11px;
+  background:#f8fafc;
+  border:1px solid var(--border);
   font-weight:700;
-  box-shadow:0 5px 20px rgba(0,0,0,.05);
+  font-size:14px;
 }
 
-/* WHY US */
+.about-card{
+  background:linear-gradient(145deg,#07142f,#123b82);
+  color:#fff;
+  border-radius:25px;
+  padding:35px;
+  box-shadow:var(--shadow);
+}
+
+.about-card h3{
+  font-size:25px;
+  margin-bottom:14px;
+}
+
+.about-card p{
+  color:#d6e1f4;
+  line-height:1.7;
+}
+
+.about-stat{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:25px;
+}
+
+.stat{
+  background:rgba(255,255,255,.08);
+  padding:18px;
+  border-radius:14px;
+}
+
+.stat strong{
+  display:block;
+  color:#ffc13a;
+  font-size:22px;
+}
+
+.stat span{
+  color:#d6e1f4;
+  font-size:12px;
+}
+
+/* ================= WHY ================= */
 
 .why{
-  background:white;
+  background:var(--light);
 }
 
 .why-grid{
@@ -314,243 +510,397 @@ section{
 }
 
 .why-card{
+  background:#fff;
+  border-radius:18px;
   padding:30px;
-  border-radius:15px;
-  background:#f8fafc;
-  border:1px solid #e5e7eb;
+  border:1px solid var(--border);
+}
+
+.why-number{
+  font-size:12px;
+  font-weight:900;
+  color:#e58b00;
+  letter-spacing:1px;
+  margin-bottom:15px;
 }
 
 .why-card h3{
-  margin:12px 0 8px;
+  color:var(--navy);
+  margin-bottom:10px;
 }
 
 .why-card p{
   color:var(--muted);
+  line-height:1.7;
   font-size:14px;
 }
 
-/* HOURS */
+/* ================= HOURS ================= */
 
 .hours{
-  background:linear-gradient(135deg,#111827,#1d4ed8);
-  color:white;
+  background:#07142f;
+  color:#fff;
 }
 
-.hours-box{
-  max-width:800px;
-  margin:auto;
-  text-align:center;
+.hours-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  align-items:stretch;
 }
 
-.hours-box h2{
-  font-size:38px;
-  margin-bottom:10px;
+.hours-card{
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.05);
+  border-radius:20px;
+  padding:32px;
 }
 
-.open{
-  display:inline-block;
-  margin:15px 0 20px;
-  padding:10px 18px;
-  border-radius:30px;
-  background:rgba(22,163,74,.2);
-  color:#86efac;
-  font-weight:800;
+.hours-card h3{
+  color:#ffc13a;
+  margin-bottom:14px;
 }
 
-.time{
+.hours-time{
   font-size:28px;
-  font-weight:800;
-  color:var(--gold);
+  font-weight:900;
 }
 
-/* CONTACT */
+.hours-card p{
+  color:#c7d3e7;
+  line-height:1.7;
+  margin-top:12px;
+}
+
+/* ================= CONTACT ================= */
 
 .contact{
-  background:white;
+  background:#fff;
 }
 
 .contact-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
 }
 
 .contact-card{
-  background:#f8fafc;
-  border:1px solid #e5e7eb;
-  border-radius:15px;
-  padding:25px;
+  display:flex;
+  gap:17px;
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  transition:.25s;
 }
 
-.contact-card .contact-icon{
-  font-size:30px;
-  margin-bottom:10px;
+.contact-card:hover{
+  box-shadow:var(--shadow);
+  transform:translateY(-3px);
+}
+
+.contact-icon{
+  width:48px;
+  height:48px;
+  flex-shrink:0;
+  border-radius:13px;
+  background:#fff4d9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
 }
 
 .contact-card h3{
-  margin-bottom:8px;
+  color:var(--navy);
+  font-size:16px;
+  margin-bottom:6px;
 }
 
 .contact-card p,
 .contact-card a{
   color:var(--muted);
-  text-decoration:none;
-  word-break:break-word;
+  font-size:14px;
+  line-height:1.6;
 }
 
-.contact-card a:hover{
-  color:var(--blue);
-}
-
-/* MAP BUTTON */
-
-.map-section{
-  background:#eef3ff;
-  text-align:center;
-}
-
-.map-box{
-  background:white;
-  padding:35px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.07);
-}
-
-.map-box h2{
-  margin-bottom:10px;
-}
-
-.map-box p{
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
-/* CTA */
+/* ================= CTA ================= */
 
 .cta{
-  background:var(--gold);
-  text-align:center;
+  padding:30px 0 80px;
 }
 
-.cta h2{
-  font-size:40px;
-  margin-bottom:10px;
+.cta-box{
+  background:linear-gradient(135deg,#07142f,#123b82);
+  color:#fff;
+  border-radius:25px;
+  padding:45px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
 
-.cta p{
-  margin-bottom:22px;
+.cta-box h2{
+  font-size:clamp(25px,4vw,38px);
+  margin-bottom:8px;
 }
 
-/* FOOTER */
+.cta-box p{
+  color:#cbd7eb;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-  background:#070b14;
-  color:#9ca3af;
-  text-align:center;
-  padding:30px 0;
+  background:#050d20;
+  color:#fff;
+  padding:50px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:35px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.footer-logo img{
+  width:180px;
+  background:#fff;
+  border-radius:8px;
+  padding:4px 7px;
+}
+
+.footer p{
+  color:#aebbd0;
+  line-height:1.7;
+  font-size:14px;
+  margin-top:15px;
+  max-width:400px;
+}
+
+.footer h3{
+  color:#ffc13a;
+  margin-bottom:15px;
+}
+
+.footer-links{
+  display:grid;
+  gap:10px;
+}
+
+.footer-links a{
+  color:#c7d2e5;
   font-size:14px;
 }
 
-footer strong{
-  color:white;
+.footer-links a:hover{
+  color:#ffc13a;
 }
 
-/* FLOATING WHATSAPP */
+.copyright{
+  padding-top:22px;
+  color:#8795ad;
+  font-size:12px;
+  text-align:center;
+}
 
-.whatsapp-float{
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
   position:fixed;
   right:20px;
   bottom:20px;
+  z-index:999;
   width:58px;
   height:58px;
-  background:#25d366;
-  color:white;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
+  background:#20c76a;
+  color:#fff;
   font-size:28px;
-  text-decoration:none;
-  box-shadow:0 8px 25px rgba(0,0,0,.25);
-  z-index:2000;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-/* MOBILE */
-
-.logo img {
-  width: 160px;
-  height: 55px;
-  object-fit: contain;
+.whatsapp:hover{
+  transform:scale(1.08);
 }
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
 
   .service-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .contact-grid{
-    grid-template-columns:repeat(2,1fr);
+  .hero-content{
+    grid-template-columns:1fr;
   }
 
-  .trust-grid{
-    grid-template-columns:repeat(2,1fr);
+  .hero-card{
+    max-width:650px;
+  }
+
+  .about-grid,
+  .hours-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
   }
 
   .why-grid{
     grid-template-columns:1fr;
   }
 
-}
-
-@media(max-width:650px){
-
-  .navbar{
-    flex-direction:column;
-    padding:15px 0;
-    gap:12px;
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
   }
 
   nav{
-    gap:12px;
+    gap:18px;
+  }
+}
+
+@media(max-width:680px){
+
+  .navbar{
+    min-height:70px;
     flex-wrap:wrap;
-    justify-content:center;
+    padding:7px 0;
   }
 
-  .hero{
-    min-height:80vh;
-    padding:55px 0;
+  .logo img{
+    width:145px;
+    height:50px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  nav{
+    display:none;
+    width:100%;
+    padding:10px 0 5px;
+    flex-direction:column;
+    gap:0;
+    align-items:stretch;
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  nav a{
+    text-align:center;
+    padding:12px 8px;
+    border-top:1px solid rgba(255,255,255,.07);
+  }
+
+  .nav-btn{
+    margin-top:5px;
+  }
+
+  .hero-content{
+    min-height:auto;
+    padding:55px 0 60px;
   }
 
   .hero h1{
-    font-size:45px;
+    font-size:46px;
+    letter-spacing:-2px;
   }
 
-  section{
-    padding:60px 0;
+  .hero h2{
+    font-size:22px;
   }
 
-  .service-grid,
-  .contact-grid,
-  .about-grid{
+  .hero p{
+    font-size:15px;
+    line-height:1.65;
+  }
+
+  .hero-buttons{
+    display:grid;
     grid-template-columns:1fr;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .hero-card{
+    padding:20px;
+  }
+
+  .hero-services{
+    grid-template-columns:1fr 1fr;
   }
 
   .trust-grid{
     grid-template-columns:1fr 1fr;
+    padding:10px 0;
   }
 
-  .section-title h2,
-  .about h2,
-  .hours-box h2,
-  .cta h2{
-    font-size:30px;
+  .trust-item{
+    padding:15px 8px;
+    border-right:0;
   }
 
-  .buttons{
+  section{
+    padding:65px 0;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .check-list{
+    grid-template-columns:1fr;
+  }
+
+  .about-card{
+    padding:25px;
+  }
+
+  .cta-box{
+    padding:30px 22px;
     flex-direction:column;
+    align-items:flex-start;
   }
 
-  .btn{
-    text-align:center;
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .whatsapp{
+    width:54px;
+    height:54px;
+    right:16px;
+    bottom:16px;
+  }
+}
+
+@media(max-width:380px){
+
+  .container{
+    width:90%;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero-services{
+    grid-template-columns:1fr;
+  }
+
+  .logo img{
+    width:130px;
+    height:46px;
   }
 }
 </style>
@@ -558,95 +908,160 @@ footer strong{
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="container navbar">
 
-    <div class="logo">
-  <a href="#home">
-    <img src="logo.png" alt="Shivaji Technologies Logo">
-  </a>
-</div>
+    <a class="logo" href="#home">
+      <img src="logo.png" alt="Shivaji Technologies">
+    </a>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#hours">Hours</a>
-      <a href="#contact">Contact</a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+      ☰
+    </button>
+
+    <nav id="navMenu">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#hours" onclick="closeMenu()">Hours</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+      <a class="nav-btn" href="tel:+916297292425">Call Now</a>
     </nav>
 
   </div>
 </header>
 
-
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="container hero-content">
 
-    <div class="badge">
-      ⚡ POWER & DIGITAL CENTRE • NABADWIP
+    <div>
+      <div class="badge">⚡ POWER & DIGITAL CENTRE • NABADWIP</div>
+
+      <h1>
+        SHIVAJI
+        <span>TECHNOLOGIES</span>
+      </h1>
+
+      <h2>Power Solutions & Digital Services</h2>
+
+      <p>
+        Battery, Inverter, Solar, E-Rickshaw Battery,
+        Online Services, Printing, Scanning and Digital
+        Services — all under one roof.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#services">
+          Explore Services →
+        </a>
+
+        <a class="btn btn-white" href="tel:+916297292425">
+          📞 Call Now
+        </a>
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/916297292425"
+           target="_blank">
+          💬 WhatsApp
+        </a>
+      </div>
     </div>
 
-    <h1>
-      SHIVAJI <span>TECHNOLOGIES</span>
-    </h1>
+    <div class="hero-card">
 
-    <h2>
-      Power Solutions & Digital Services
-    </h2>
+      <div class="hero-card-title">
+        Our Core Services
+      </div>
 
-    <p>
-      Battery, Inverter, Solar, E-Rickshaw Battery,
-      Online Services, Printing, Scanning and Digital Services —
-      all under one roof.
-    </p>
+      <div class="hero-services">
 
-    <div class="buttons">
+        <div class="hero-service">
+          <strong>🔋 Battery</strong>
+          <small>Quality battery solutions</small>
+        </div>
 
-      <a href="#services" class="btn btn-primary">
-        Explore Services
-      </a>
+        <div class="hero-service">
+          <strong>⚡ Inverter</strong>
+          <small>Reliable backup power</small>
+        </div>
 
-      <a href="tel:+916297292425" class="btn btn-call">
-        📞 Call Now
-      </a>
+        <div class="hero-service">
+          <strong>☀️ Solar</strong>
+          <small>Solar power solutions</small>
+        </div>
 
-      <a href="https://wa.me/916297292425"
-         target="_blank"
-         class="btn btn-whatsapp">
-        💬 WhatsApp
-      </a>
+        <div class="hero-service">
+          <strong>🛺 E-Rickshaw</strong>
+          <small>Battery sales & service</small>
+        </div>
 
+        <div class="hero-service">
+          <strong>💻 Digital</strong>
+          <small>Online service assistance</small>
+        </div>
+
+        <div class="hero-service">
+          <strong>🖨️ Printing</strong>
+          <small>Print & scan services</small>
+        </div>
+
+      </div>
     </div>
 
   </div>
 </section>
 
-
+<!-- TRUST -->
 <div class="trust">
   <div class="container trust-grid">
 
-    <div class="trust-item">🔋 Quality Products</div>
-    <div class="trust-item">⚡ Power Solutions</div>
-    <div class="trust-item">💻 Digital Services</div>
-    <div class="trust-item">🤝 Customer Support</div>
+    <div class="trust-item">
+      <div class="trust-icon">🔋</div>
+      <strong>Quality Products</strong>
+      <span>Power products</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">⚡</div>
+      <strong>Power Solutions</strong>
+      <span>Practical solutions</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">💻</div>
+      <strong>Digital Services</strong>
+      <span>Online assistance</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">🤝</div>
+      <strong>Customer Support</strong>
+      <span>Helpful service</span>
+    </div>
 
   </div>
 </div>
 
-
+<!-- SERVICES -->
 <section class="services" id="services">
 
   <div class="container">
 
-    <div class="section-title">
+    <div class="section-head">
+      <div class="section-kicker">What We Do</div>
       <h2>Our Services</h2>
-      <p>Power, Energy & Digital Services</p>
+      <p>
+        Power, Energy & Digital Services — convenient solutions
+        for your everyday needs.
+      </p>
     </div>
 
     <div class="service-grid">
 
       <div class="service-card">
-        <div class="icon">🔋</div>
+        <div class="service-icon">🔋</div>
         <h3>Battery</h3>
         <p>
           Battery products and service for different applications.
@@ -654,7 +1069,7 @@ footer strong{
       </div>
 
       <div class="service-card">
-        <div class="icon">⚡</div>
+        <div class="service-icon">⚡</div>
         <h3>Inverter</h3>
         <p>
           Reliable inverter and backup power solutions.
@@ -662,7 +1077,7 @@ footer strong{
       </div>
 
       <div class="service-card">
-        <div class="icon">☀️</div>
+        <div class="service-icon">☀️</div>
         <h3>Solar</h3>
         <p>
           Solar products and power solutions for homes and businesses.
@@ -670,7 +1085,7 @@ footer strong{
       </div>
 
       <div class="service-card">
-        <div class="icon">🛺</div>
+        <div class="service-icon">🛺</div>
         <h3>E-Rickshaw Battery</h3>
         <p>
           E-Rickshaw battery sales and service.
@@ -678,7 +1093,7 @@ footer strong{
       </div>
 
       <div class="service-card">
-        <div class="icon">💻</div>
+        <div class="service-icon">💻</div>
         <h3>Online Services</h3>
         <p>
           Online form fill-up and digital application assistance.
@@ -686,7 +1101,7 @@ footer strong{
       </div>
 
       <div class="service-card">
-        <div class="icon">🖨️</div>
+        <div class="service-icon">🖨️</div>
         <h3>Printing & Scanning</h3>
         <p>
           Fast printing, scanning and document services.
@@ -694,7 +1109,7 @@ footer strong{
       </div>
 
       <div class="service-card">
-        <div class="icon">🪪</div>
+        <div class="service-icon">🪪</div>
         <h3>PAN Services</h3>
         <p>
           PAN-related online assistance and services.
@@ -702,7 +1117,7 @@ footer strong{
       </div>
 
       <div class="service-card">
-        <div class="icon">📄</div>
+        <div class="service-icon">📄</div>
         <h3>Digital Services</h3>
         <p>
           Digital Seva and online service assistance.
@@ -710,18 +1125,22 @@ footer strong{
       </div>
 
     </div>
-
   </div>
 </section>
 
-
-<section class="about" id="about">
+<!-- ABOUT -->
+<section id="about">
 
   <div class="container about-grid">
 
-    <div>
+    <div class="about-content">
 
-      <h2>About Shivaji Technologies</h2>
+      <div class="section-kicker">About Us</div>
+
+      <h2>
+        Power & Digital Services
+        Under One Roof
+      </h2>
 
       <p>
         Shivaji Technologies is a Power & Digital Centre
@@ -734,14 +1153,48 @@ footer strong{
         service and customer satisfaction.
       </p>
 
+      <div class="check-list">
+        <div class="check">✓ Quality Products</div>
+        <div class="check">✓ Reliable Service</div>
+        <div class="check">✓ Digital & Online Services</div>
+        <div class="check">✓ Customer Support</div>
+      </div>
+
     </div>
 
-    <div class="feature-list">
+    <div class="about-card">
 
-      <div class="feature">✅ Quality Products</div>
-      <div class="feature">✅ Reliable Service</div>
-      <div class="feature">✅ Digital & Online Services</div>
-      <div class="feature">✅ Customer Support</div>
+      <h3>Why Shivaji Technologies?</h3>
+
+      <p>
+        Everything you need in one convenient place —
+        power products, energy solutions and everyday
+        digital services.
+      </p>
+
+      <div class="about-stat">
+
+        <div class="stat">
+          <strong>8+</strong>
+          <span>Service Categories</span>
+        </div>
+
+        <div class="stat">
+          <strong>9AM–8PM</strong>
+          <span>Every Day</span>
+        </div>
+
+        <div class="stat">
+          <strong>Power</strong>
+          <span>Energy Solutions</span>
+        </div>
+
+        <div class="stat">
+          <strong>Digital</strong>
+          <span>Online Services</span>
+        </div>
+
+      </div>
 
     </div>
 
@@ -749,20 +1202,24 @@ footer strong{
 
 </section>
 
-
+<!-- WHY -->
 <section class="why">
 
   <div class="container">
 
-    <div class="section-title">
-      <h2>Why Choose Us?</h2>
-      <p>Everything you need in one convenient place.</p>
+    <div class="section-head">
+      <div class="section-kicker">Why Choose Us</div>
+      <h2>A Convenient One-Stop Centre</h2>
+      <p>
+        Practical solutions for home, business, vehicles
+        and everyday digital needs.
+      </p>
     </div>
 
     <div class="why-grid">
 
       <div class="why-card">
-        <div class="icon">🏪</div>
+        <div class="why-number">01 / ONE STOP</div>
         <h3>One Stop Centre</h3>
         <p>
           Power products and digital services available
@@ -771,7 +1228,7 @@ footer strong{
       </div>
 
       <div class="why-card">
-        <div class="icon">🤝</div>
+        <div class="why-number">02 / SUPPORT</div>
         <h3>Customer Focused</h3>
         <p>
           We aim to provide helpful and reliable service
@@ -780,7 +1237,7 @@ footer strong{
       </div>
 
       <div class="why-card">
-        <div class="icon">⚙️</div>
+        <div class="why-number">03 / SOLUTIONS</div>
         <h3>Practical Solutions</h3>
         <p>
           Solutions for home, business, vehicles and
@@ -791,180 +1248,213 @@ footer strong{
     </div>
 
   </div>
-
 </section>
 
-
+<!-- HOURS -->
 <section class="hours" id="hours">
-
-  <div class="container hours-box">
-
-    <h2>Visit Our Shop</h2>
-
-    <p>
-      We are available for power and digital services.
-    </p>
-
-    <div class="open">
-      🟢 Business Hours
-    </div>
-
-    <div class="time">
-      9:00 AM – 8:00 PM
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="contact" id="contact">
 
   <div class="container">
 
-    <div class="section-title">
-      <h2>Contact Us</h2>
-      <p>We are happy to help you.</p>
+    <div class="section-head">
+      <div class="section-kicker">Visit Us</div>
+      <h2 style="color:#fff;">We're Ready to Help</h2>
+      <p style="color:#c7d3e7;">
+        Visit our shop for power and digital services.
+      </p>
     </div>
 
-    <div class="contact-grid">
+    <div class="hours-grid">
 
-      <div class="contact-card">
+      <div class="hours-card">
+        <h3>🟢 Business Hours</h3>
+        <div class="hours-time">9:00 AM – 8:00 PM</div>
+        <p>
+          Open every day for power and digital services.
+        </p>
+      </div>
 
-        <div class="contact-icon">📍</div>
-
-        <h3>Address</h3>
-
+      <div class="hours-card">
+        <h3>📍 Shop Location</h3>
         <p>
           Sarkar Para Road,<br>
           Near Nabadwip Court,<br>
           Nabadwip, Nadia,<br>
           West Bengal - 741302
         </p>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <div class="contact-icon">📞</div>
-
-        <h3>Phone</h3>
-
-        <p>
-          <a href="tel:+916297292425">
-            +91 62972 92425
-          </a>
-        </p>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <div class="contact-icon">✉️</div>
-
-        <h3>Email</h3>
-
-        <p>
-          <a href="mailto:technologiesshivaji@gmail.com">
-            technologiesshivaji@gmail.com
-          </a>
-        </p>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <div class="contact-icon">🕘</div>
-
-        <h3>Opening Hours</h3>
-
-        <p>
-          Every Day<br>
-          9:00 AM – 8:00 PM
-        </p>
-
       </div>
 
     </div>
 
   </div>
-
 </section>
 
-
-<section class="map-section">
+<!-- CONTACT -->
+<section class="contact" id="contact">
 
   <div class="container">
 
-    <div class="map-box">
-
-      <h2>Find Our Shop</h2>
-
+    <div class="section-head">
+      <div class="section-kicker">Get In Touch</div>
+      <h2>Contact Shivaji Technologies</h2>
       <p>
-        Sarkar Para Road, Near Nabadwip Court,
-        Nabadwip, Nadia, West Bengal - 741302
+        We are happy to help you with power and digital services.
       </p>
+    </div>
 
-      <a
-        class="btn btn-primary"
-        href="https://www.google.com/maps/search/?api=1&query=Sarkar+Para+Road+Near+Nabadwip+Court+Nabadwip+Nadia+West+Bengal+741302"
-        target="_blank">
-        📍 Get Directions
-      </a>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h3>Address</h3>
+          <p>
+            Sarkar Para Road, Near Nabadwip Court,
+            Nabadwip, Nadia, West Bengal - 741302
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h3>Phone</h3>
+          <a href="tel:+916297292425">
+            +91 62972 92425
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h3>Email</h3>
+          <a href="mailto:technologiesshivaji@gmail.com">
+            technologiesshivaji@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">🕘</div>
+        <div>
+          <h3>Opening Hours</h3>
+          <p>
+            Every Day<br>
+            9:00 AM – 8:00 PM
+          </p>
+        </div>
+      </div>
 
     </div>
 
   </div>
-
 </section>
 
-
+<!-- CTA -->
 <section class="cta">
 
   <div class="container">
 
-    <h2>Need Power or Digital Services?</h2>
+    <div class="cta-box">
 
-    <p>
-      Contact Shivaji Technologies today.
-    </p>
+      <div>
+        <h2>Need Power or Digital Services?</h2>
+        <p>
+          Contact Shivaji Technologies today.
+        </p>
+      </div>
 
-    <a
-      class="btn btn-whatsapp"
-      href="https://wa.me/916297292425"
-      target="_blank">
-      💬 Chat on WhatsApp
-    </a>
+      <div class="hero-buttons" style="margin-top:0;">
+
+        <a class="btn btn-primary"
+           href="tel:+916297292425">
+          📞 Call Now
+        </a>
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/916297292425"
+           target="_blank">
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </div>
 
   </div>
 
 </section>
 
-
+<!-- FOOTER -->
 <footer>
 
-  <p>
-    © 2026 <strong>Shivaji Technologies</strong>.
-    All Rights Reserved.
-  </p>
+  <div class="container footer-grid">
 
-  <p>
+    <div>
+      <div class="footer-logo">
+        <img src="logo.png" alt="Shivaji Technologies">
+      </div>
+
+      <p>
+        Power & Digital Centre serving Nabadwip and
+        nearby areas with power products and digital
+        services.
+      </p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+
+      <div class="footer-links">
+        <a href="tel:+916297292425">📞 +91 62972 92425</a>
+        <a href="mailto:technologiesshivaji@gmail.com">
+          ✉️ Email Us
+        </a>
+        <a href="https://wa.me/916297292425" target="_blank">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container copyright">
+    © 2026 Shivaji Technologies. All Rights Reserved.
+    <br>
     Power & Digital Centre • Nabadwip, Nadia, West Bengal
-  </p>
+  </div>
 
 </footer>
 
-
-<a
-  class="whatsapp-float"
-  href="https://wa.me/916297292425"
-  target="_blank"
-  aria-label="Chat on WhatsApp">
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp"
+   href="https://wa.me/916297292425"
+   target="_blank"
+   aria-label="WhatsApp">
   💬
 </a>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("active");
+}
+
+function closeMenu(){
+  document.getElementById("navMenu").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
