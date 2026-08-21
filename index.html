@@ -63,10 +63,16 @@ header{
   align-items:center;
 }
 
-.logo{
-  color:#fff;
-  font-size:20px;
-  font-weight:800;
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 170px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
 }
 
 .logo span{
@@ -467,7 +473,10 @@ footer strong{
 
 /* MOBILE */
 
-@media(max-width:900px){
+.logo img {
+  width: 145px;
+  height: 50px;
+}
 
   .service-grid{
     grid-template-columns:repeat(2,1fr);
@@ -548,8 +557,10 @@ footer strong{
   <div class="container navbar">
 
     <div class="logo">
-      SHIVAJI <span>TECHNOLOGIES</span>
-    </div>
+  <a href="#home">
+    <img src="logo.png" alt="Shivaji Technologies Logo">
+  </a>
+</div>
 
     <nav>
       <a href="#home">Home</a>
