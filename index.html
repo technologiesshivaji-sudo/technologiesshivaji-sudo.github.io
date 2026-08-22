@@ -1,1460 +1,2547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Shivaji Technologies | Power & Digital Centre</title>
-
-<meta name="description" content="Shivaji Technologies, Nabadwip - Battery, Inverter, Solar, E-Rickshaw Battery, Online Services, Printing, Scanning and Digital Services.">
-
-<meta name="keywords" content="Shivaji Technologies, Nabadwip, Battery, Inverter, Solar, E-Rickshaw Battery, Digital Services">
-
-<meta name="author" content="Shivaji Technologies">
-
-<style>
-:root{
-  --navy:#07142f;
-  --navy2:#0b1d42;
-  --blue:#123b82;
-  --orange:#ffad00;
-  --orange2:#ff7a00;
-  --white:#ffffff;
-  --text:#172033;
-  --muted:#667085;
-  --light:#f6f8fc;
-  --border:#e7eaf0;
-  --green:#20c76a;
-  --shadow:0 18px 50px rgba(4,18,48,.12);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-  overflow-x:hidden;
-}
-
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  color:var(--text);
-  background:#fff;
-  overflow-x:hidden;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:min(1120px,92%);
-  margin:auto;
-}
-
-/* ================= HEADER ================= */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(7,20,47,.97);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  backdrop-filter:blur(12px);
-}
-
-.navbar{
-  min-height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  flex-shrink:0;
-}
-
-.logo img{
-  width:185px;
-  height:62px;
-  object-fit:contain;
-  display:block;
-  background:#fff;
-  border-radius:9px;
-  padding:3px 7px;
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:28px;
-}
-
-nav a{
-  color:#fff;
-  font-size:14px;
-  font-weight:700;
-  transition:.25s;
-}
-
-nav a:hover{
-  color:var(--orange);
-}
-
-.nav-btn{
-  background:var(--orange);
-  color:#111!important;
-  padding:11px 17px;
-  border-radius:9px;
-}
-
-.nav-btn:hover{
-  background:#ffc13a;
-}
-
-.menu-btn{
-  display:none;
-  border:0;
-  background:transparent;
-  color:white;
-  font-size:28px;
-  cursor:pointer;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 85% 15%,rgba(31,91,190,.55),transparent 32%),
-    radial-gradient(circle at 20% 90%,rgba(255,122,0,.12),transparent 28%),
-    linear-gradient(135deg,#06122d,#0a2350 60%,#092d6c);
-  color:#fff;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  right:-180px;
-  bottom:-180px;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:50%;
-}
-
-.hero-content{
-  min-height:650px;
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  align-items:center;
-  gap:40px;
-  padding:70px 0;
-}
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  padding:9px 15px;
-  border:1px solid rgba(255,173,0,.5);
-  background:rgba(255,173,0,.09);
-  color:#ffc33c;
-  border-radius:999px;
-  font-size:13px;
-  font-weight:800;
-  margin-bottom:22px;
-}
-
-.hero h1{
-  font-size:clamp(46px,7vw,78px);
-  line-height:.95;
-  letter-spacing:-3px;
-  margin-bottom:22px;
-}
-
-.hero h1 span{
-  display:block;
-  color:var(--orange);
-}
-
-.hero h2{
-  font-size:clamp(21px,3vw,30px);
-  line-height:1.2;
-  margin-bottom:18px;
-}
-
-.hero p{
-  max-width:670px;
-  color:#d8e2f4;
-  font-size:17px;
-  line-height:1.75;
-}
-
-.hero-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:30px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  min-height:52px;
-  padding:0 22px;
-  border-radius:10px;
-  font-weight:800;
-  transition:.25s;
-}
-
-.btn-primary{
-  background:var(--orange);
-  color:#111;
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
-  background:#ffc13a;
-}
-
-.btn-white{
-  background:#fff;
-  color:#101828;
-}
-
-.btn-white:hover{
-  transform:translateY(-2px);
-}
-
-.btn-whatsapp{
-  background:var(--green);
-  color:#fff;
-}
-
-.btn-whatsapp:hover{
-  transform:translateY(-2px);
-  background:#16b85c;
-}
-
-/* HERO CARD */
-
-.hero-card{
-  position:relative;
-  z-index:2;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:24px;
-  padding:28px;
-  box-shadow:0 25px 70px rgba(0,0,0,.2);
-  backdrop-filter:blur(10px);
-}
-
-.hero-card-title{
-  font-size:14px;
-  font-weight:800;
-  color:#ffc13a;
-  margin-bottom:18px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-
-.hero-services{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.hero-service{
-  padding:17px;
-  border-radius:14px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.09);
-}
-
-.hero-service strong{
-  display:block;
-  font-size:15px;
-  margin-bottom:5px;
-}
-
-.hero-service small{
-  color:#c6d2e7;
-  line-height:1.4;
-}
-
-/* ================= TRUST BAR ================= */
-
-.trust{
-  background:#fff;
-  box-shadow:0 10px 35px rgba(0,0,0,.06);
-  position:relative;
-  z-index:5;
-}
-
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  padding:25px 0;
-}
-
-.trust-item{
-  text-align:center;
-  padding:8px 15px;
-  border-right:1px solid var(--border);
-}
-
-.trust-item:last-child{
-  border-right:0;
-}
-
-.trust-icon{
-  font-size:24px;
-  margin-bottom:7px;
-}
-
-.trust-item strong{
-  display:block;
-  font-size:14px;
-}
-
-.trust-item span{
-  display:block;
-  color:var(--muted);
-  font-size:12px;
-  margin-top:4px;
-}
-
-/* ================= SECTION ================= */
-
-section{
-  padding:90px 0;
-}
-
-.section-head{
-  max-width:700px;
-  margin:0 auto 45px;
-  text-align:center;
-}
-
-.section-kicker{
-  color:#e58b00;
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-
-.section-head h2{
-  color:var(--navy);
-  font-size:clamp(30px,5vw,46px);
-  line-height:1.1;
-  margin-bottom:13px;
-}
-
-.section-head p{
-  color:var(--muted);
-  line-height:1.7;
-}
-
-/* ================= SERVICES ================= */
-
-.services{
-  background:var(--light);
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.service-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:26px;
-  transition:.3s;
-}
-
-.service-card:hover{
-  transform:translateY(-7px);
-  box-shadow:var(--shadow);
-  border-color:#ffd98a;
-}
-
-.service-icon{
-  width:52px;
-  height:52px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:14px;
-  background:#fff4d9;
-  font-size:25px;
-  margin-bottom:18px;
-}
-
-.service-card h3{
-  color:var(--navy);
-  font-size:18px;
-  margin-bottom:9px;
-}
-
-.service-card p{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.65;
-}
-
-/* ================= ABOUT ================= */
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
-}
-
-.about-content h2{
-  color:var(--navy);
-  font-size:clamp(32px,5vw,46px);
-  margin-bottom:18px;
-}
-
-.about-content p{
-  color:var(--muted);
-  line-height:1.8;
-  margin-bottom:15px;
-}
-
-.check-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:13px;
-  margin-top:24px;
-}
-
-.check{
-  padding:13px 14px;
-  border-radius:11px;
-  background:#f8fafc;
-  border:1px solid var(--border);
-  font-weight:700;
-  font-size:14px;
-}
-
-.about-card{
-  background:linear-gradient(145deg,#07142f,#123b82);
-  color:#fff;
-  border-radius:25px;
-  padding:35px;
-  box-shadow:var(--shadow);
-}
-
-.about-card h3{
-  font-size:25px;
-  margin-bottom:14px;
-}
-
-.about-card p{
-  color:#d6e1f4;
-  line-height:1.7;
-}
-
-.about-stat{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:25px;
-}
-
-.stat{
-  background:rgba(255,255,255,.08);
-  padding:18px;
-  border-radius:14px;
-}
-
-.stat strong{
-  display:block;
-  color:#ffc13a;
-  font-size:22px;
-}
-
-.stat span{
-  color:#d6e1f4;
-  font-size:12px;
-}
-
-/* ================= WHY ================= */
-
-.why{
-  background:var(--light);
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.why-card{
-  background:#fff;
-  border-radius:18px;
-  padding:30px;
-  border:1px solid var(--border);
-}
-
-.why-number{
-  font-size:12px;
-  font-weight:900;
-  color:#e58b00;
-  letter-spacing:1px;
-  margin-bottom:15px;
-}
-
-.why-card h3{
-  color:var(--navy);
-  margin-bottom:10px;
-}
-
-.why-card p{
-  color:var(--muted);
-  line-height:1.7;
-  font-size:14px;
-}
-
-/* ================= HOURS ================= */
-
-.hours{
-  background:#07142f;
-  color:#fff;
-}
-
-.hours-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-  align-items:stretch;
-}
-
-.hours-card{
-  border:1px solid rgba(255,255,255,.1);
-  background:rgba(255,255,255,.05);
-  border-radius:20px;
-  padding:32px;
-}
-
-.hours-card h3{
-  color:#ffc13a;
-  margin-bottom:14px;
-}
-
-.hours-time{
-  font-size:28px;
-  font-weight:900;
-}
-
-.hours-card p{
-  color:#c7d3e7;
-  line-height:1.7;
-  margin-top:12px;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-  background:#fff;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-}
-
-.contact-card{
-  display:flex;
-  gap:17px;
-  padding:24px;
-  border:1px solid var(--border);
-  border-radius:17px;
-  transition:.25s;
-}
-
-.contact-card:hover{
-  box-shadow:var(--shadow);
-  transform:translateY(-3px);
-}
-
-.contact-icon{
-  width:48px;
-  height:48px;
-  flex-shrink:0;
-  border-radius:13px;
-  background:#fff4d9;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-}
-
-.contact-card h3{
-  color:var(--navy);
-  font-size:16px;
-  margin-bottom:6px;
-}
-
-.contact-card p,
-.contact-card a{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.6;
-}
-
-/* ================= CTA ================= */
-
-.cta{
-  padding:30px 0 80px;
-}
-
-.cta-box{
-  background:linear-gradient(135deg,#07142f,#123b82);
-  color:#fff;
-  border-radius:25px;
-  padding:45px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-}
-
-.cta-box h2{
-  font-size:clamp(25px,4vw,38px);
-  margin-bottom:8px;
-}
-
-.cta-box p{
-  color:#cbd7eb;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#050d20;
-  color:#fff;
-  padding:50px 0 25px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.3fr 1fr 1fr;
-  gap:40px;
-  padding-bottom:35px;
-  border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-.footer-logo img{
-  width:180px;
-  background:#fff;
-  border-radius:8px;
-  padding:4px 7px;
-}
-
-.footer p{
-  color:#aebbd0;
-  line-height:1.7;
-  font-size:14px;
-  margin-top:15px;
-  max-width:400px;
-}
-
-.footer h3{
-  color:#ffc13a;
-  margin-bottom:15px;
-}
-
-.footer-links{
-  display:grid;
-  gap:10px;
-}
-
-.footer-links a{
-  color:#c7d2e5;
-  font-size:14px;
-}
-
-.footer-links a:hover{
-  color:#ffc13a;
-}
-
-.copyright{
-  padding-top:22px;
-  color:#8795ad;
-  font-size:12px;
-  text-align:center;
-}
-
-/* ================= WHATSAPP ================= */
-
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  z-index:999;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#20c76a;
-  color:#fff;
-  font-size:28px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-.whatsapp:hover{
-  transform:scale(1.08);
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-  .service-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero-content{
-    grid-template-columns:1fr;
-  }
-
-  .hero-card{
-    max-width:650px;
-  }
-
-  .about-grid,
-  .hours-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .why-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  nav{
-    gap:18px;
-  }
-}
-
-@media(max-width:680px){
-
-  .navbar{
-    min-height:70px;
-    flex-wrap:wrap;
-    padding:7px 0;
-  }
-
-  .logo img{
-    width:145px;
-    height:50px;
-  }
-
-  .menu-btn{
-    display:block;
-  }
-
-  nav{
-    display:none;
-    width:100%;
-    padding:10px 0 5px;
-    flex-direction:column;
-    gap:0;
-    align-items:stretch;
-  }
-
-  nav.active{
-    display:flex;
-  }
-
-  nav a{
-    text-align:center;
-    padding:12px 8px;
-    border-top:1px solid rgba(255,255,255,.07);
-  }
-
-  .nav-btn{
-    margin-top:5px;
-  }
-
-  .hero-content{
-    min-height:auto;
-    padding:55px 0 60px;
-  }
-
-  .hero h1{
-    font-size:46px;
-    letter-spacing:-2px;
-  }
-
-  .hero h2{
-    font-size:22px;
-  }
-
-  .hero p{
-    font-size:15px;
-    line-height:1.65;
-  }
-
-  .hero-buttons{
-    display:grid;
-    grid-template-columns:1fr;
-  }
-
-  .btn{
-    width:100%;
-  }
-
-  .hero-card{
-    padding:20px;
-  }
-
-  .hero-services{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .trust-grid{
-    grid-template-columns:1fr 1fr;
-    padding:10px 0;
-  }
-
-  .trust-item{
-    padding:15px 8px;
-    border-right:0;
-  }
-
-  section{
-    padding:65px 0;
-  }
-
-  .service-grid{
-    grid-template-columns:1fr;
-  }
-
-  .check-list{
-    grid-template-columns:1fr;
-  }
-
-  .about-card{
-    padding:25px;
-  }
-
-  .cta-box{
-    padding:30px 22px;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .whatsapp{
-    width:54px;
-    height:54px;
-    right:16px;
-    bottom:16px;
-  }
-}
-
-@media(max-width:380px){
-
-  .container{
-    width:90%;
-  }
-
-  .hero h1{
-    font-size:40px;
-  }
-
-  .hero-services{
-    grid-template-columns:1fr;
-  }
-
-  .logo img{
-    width:130px;
-    height:46px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Shivaji Technologies - Power, Solar, Battery, Inverter, E-Rickshaw Battery and Digital Services.">
+
+  <meta name="keywords"
+        content="Shivaji Technologies, Battery, Inverter, Solar, E-Rickshaw Battery, Digital Services">
+
+  <meta name="author"
+        content="Shivaji Technologies">
+
+  <title>Shivaji Technologies | Power • Solar • Digital</title>
+
+  <style>
+    /* =========================================================
+       SHIVAJI TECHNOLOGIES
+       PREMIUM ONE-PAGE WEBSITE
+       ========================================================= */
+
+    :root {
+      --bg: #07111f;
+      --bg-2: #0b1728;
+      --card: rgba(255,255,255,.055);
+      --card-border: rgba(255,255,255,.11);
+
+      --text: #f8fafc;
+      --muted: #a9b6c8;
+
+      --primary: #ffb300;
+      --primary-2: #ffd166;
+
+      --blue: #36a3ff;
+      --green: #26d07c;
+
+      --shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 80% 10%,
+          rgba(54,163,255,.12),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 10% 40%,
+          rgba(255,179,0,.08),
+          transparent 30%
+        ),
+        var(--bg);
+
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--max)
+      );
+      margin: auto;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background:
+        rgba(7,17,31,.72);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.07);
+    }
+
+    .nav {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+    }
+
+    .logo-mark {
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 13px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #ff7a00
+        );
+
+      color: #111827;
+
+      font-size: 22px;
+      font-weight: 900;
+
+      box-shadow:
+        0 10px 35px rgba(255,179,0,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      color: #c8d2df;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-btn {
+      padding: 11px 18px;
+      border-radius: 12px;
+
+      background: var(--primary);
+      color: #101010;
+
+      font-weight: 800;
+    }
+
+    .menu-btn {
+      display: none;
+
+      border: 0;
+      background: transparent;
+      color: white;
+
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+
+      padding:
+        150px 0
+        80px;
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -180px;
+      top: 100px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(54,163,255,.22),
+          transparent 68%
+        );
+
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.05fr .95fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 13px;
+
+      border: 1px solid
+        rgba(255,255,255,.1);
+
+      background:
+        rgba(255,255,255,.045);
+
+      border-radius: 100px;
+
+      color: var(--primary-2);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 14px var(--green);
+    }
+
+    .hero h1 {
+      margin-top: 22px;
+
+      font-size:
+        clamp(44px, 6vw, 76px);
+
+      line-height: .98;
+      letter-spacing: -3px;
+
+      max-width: 760px;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          90deg,
+          var(--primary),
+          #fff2b0,
+          var(--blue)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero p {
+      margin-top: 25px;
+
+      max-width: 650px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding:
+        0 22px;
+
+      border-radius: 14px;
+
+      font-weight: 800;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #ff8500
+        );
+
+      color: #101010;
+
+      box-shadow:
+        0 15px 35px
+        rgba(255,179,0,.18);
+    }
+
+    .btn-secondary {
+      border:
+        1px solid var(--card-border);
+
+      background:
+        rgba(255,255,255,.04);
+
+      color: white;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 20px;
+
+      margin-top: 35px;
+
+      color: #b9c5d4;
+
+      font-size: 13px;
+    }
+
+    .hero-trust div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .check {
+      width: 21px;
+      height: 21px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        rgba(38,208,124,.12);
+
+      color: var(--green);
+
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       HERO VISUAL
+       ========================================================= */
+
+    .hero-visual {
+      position: relative;
+      min-height: 510px;
+
+      display: grid;
+      place-items: center;
+    }
+
+    .energy-orb {
+      position: absolute;
+
+      width: 330px;
+      height: 330px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #fff8c7,
+          var(--primary) 24%,
+          #ff7200 55%,
+          rgba(255,114,0,.08) 70%,
+          transparent 72%
+        );
+
+      filter:
+        drop-shadow(
+          0 0 70px
+          rgba(255,179,0,.28)
+        );
+
+      animation:
+        float 5s ease-in-out infinite;
+    }
+
+    .orbit {
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 50%;
+
+      transform:
+        rotate(-25deg);
+
+      animation:
+        spin 20s linear infinite;
+    }
+
+    .orbit::before,
+    .orbit::after {
+      content: "";
+
+      position: absolute;
+
+      width: 13px;
+      height: 13px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow:
+        0 0 20px
+        rgba(255,255,255,.8);
+    }
+
+    .orbit::before {
+      top: 28px;
+      left: 80px;
+    }
+
+    .orbit::after {
+      right: 50px;
+      bottom: 80px;
+
+      background:
+        var(--blue);
+    }
+
+    .floating-card {
+      position: absolute;
+
+      min-width: 170px;
+
+      padding: 18px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      background:
+        rgba(10,22,39,.72);
+
+      backdrop-filter:
+        blur(18px);
+
+      border-radius: 18px;
+
+      box-shadow: var(--shadow);
+
+      animation:
+        float 4s ease-in-out infinite;
+    }
+
+    .floating-card strong {
+      display: block;
+
+      font-size: 22px;
+    }
+
+    .floating-card small {
+      color: var(--muted);
+    }
+
+    .card-one {
+      left: 0;
+      top: 80px;
+    }
+
+    .card-two {
+      right: 0;
+      bottom: 70px;
+
+      animation-delay:
+        -1.5s;
+    }
+
+    /* =========================================================
+       STATS
+       ========================================================= */
+
+    .stats {
+      padding: 25px 0 70px;
+    }
+
+    .stats-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      border:
+        1px solid
+        var(--card-border);
+
+      background:
+        rgba(255,255,255,.035);
+
+      border-radius: 22px;
+
+      overflow: hidden;
+    }
+
+    .stat {
+      padding: 27px;
+
+      text-align: center;
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.08);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+
+      font-size: 29px;
+
+      color: white;
+    }
+
+    .stat span {
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       SECTIONS
+       ========================================================= */
+
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+
+      margin-bottom: 50px;
+    }
+
+    .section-label {
+      color: var(--primary);
+
+      font-size: 12px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      margin-top: 10px;
+
+      font-size:
+        clamp(34px, 5vw, 52px);
+
+      line-height: 1.05;
+
+      letter-spacing: -2px;
+    }
+
+    .section-head p {
+      margin-top: 15px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+    }
+
+    /* =========================================================
+       SERVICES
+       ========================================================= */
+
+    .services-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+
+      padding: 28px;
+
+      min-height: 240px;
+
+      border:
+        1px solid
+        var(--card-border);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.065),
+          rgba(255,255,255,.025)
+        );
+
+      border-radius:
+        var(--radius);
+
+      overflow: hidden;
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+    }
+
+    .service-card:hover {
+      transform:
+        translateY(-8px);
+
+      border-color:
+        rgba(255,179,0,.4);
+
+      background:
+        rgba(255,255,255,.08);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 15px;
+
+      background:
+        rgba(255,179,0,.12);
+
+      color: var(--primary);
+
+      font-size: 24px;
+    }
+
+    .service-card h3 {
+      margin-top: 24px;
+
+      font-size: 19px;
+    }
+
+    .service-card p {
+      margin-top: 9px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .service-number {
+      position: absolute;
+
+      right: 20px;
+      top: 20px;
+
+      color:
+        rgba(255,255,255,.1);
+
+      font-size: 32px;
+      font-weight: 900;
+    }
+
+    /* =========================================================
+       FEATURE
+       ========================================================= */
+
+    .feature {
+      padding: 100px 0;
+    }
+
+    .feature-box {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 50px;
+
+      padding: 55px;
+
+      border-radius: 32px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,179,0,.09),
+          rgba(54,163,255,.07)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+    .feature-copy h2 {
+      font-size:
+        clamp(34px, 5vw, 52px);
+
+      line-height: 1.05;
+
+      letter-spacing: -2px;
+    }
+
+    .feature-copy p {
+      margin-top: 18px;
+
+      color: var(--muted);
+    }
+
+    .feature-list {
+      display: grid;
+
+      gap: 15px;
+
+      margin-top: 28px;
+    }
+
+    .feature-list div {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .feature-list b {
+      display: block;
+    }
+
+    .feature-list span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .feature-visual {
+      min-height: 350px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 25px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,179,0,.18),
+          transparent 60%
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.07);
+    }
+
+    .solar-panel {
+      width: 260px;
+
+      padding: 15px;
+
+      transform:
+        perspective(600px)
+        rotateX(45deg)
+        rotateZ(-8deg);
+
+      background:
+        #101e34;
+
+      border:
+        4px solid
+        #263c5c;
+
+      box-shadow:
+        0 35px 70px
+        rgba(0,0,0,.4);
+    }
+
+    .solar-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(6, 1fr);
+
+      gap: 3px;
+    }
+
+    .solar-grid span {
+      aspect-ratio: 1 / 1;
+
+      background:
+        linear-gradient(
+          135deg,
+          #315d8c,
+          #102b4d
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
+    }
+
+    /* =========================================================
+       PRODUCTS
+       ========================================================= */
+
+    .products-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .product-card {
+      padding: 30px;
+
+      min-height: 300px;
+
+      border:
+        1px solid
+        var(--card-border);
+
+      border-radius:
+        var(--radius);
+
+      background:
+        rgba(255,255,255,.04);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-visual {
+      height: 135px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(54,163,255,.12),
+          rgba(255,179,0,.08)
+        );
+
+      font-size: 58px;
+    }
+
+    .product-card h3 {
+      margin-top: 22px;
+    }
+
+    .product-card p {
+      margin-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        .85fr 1.15fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .about-card {
+      padding: 38px;
+
+      border-radius: 28px;
+
+      border:
+        1px solid
+        var(--card-border);
+
+      background:
+        rgba(255,255,255,.04);
+    }
+
+    .about-card h3 {
+      font-size: 28px;
+    }
+
+    .about-card p {
+      margin-top: 15px;
+
+      color: var(--muted);
+    }
+
+    .about-points {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 18px;
+
+      margin-top: 25px;
+    }
+
+    .about-point {
+      padding: 20px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,.04);
+    }
+
+    .about-point strong {
+      display: block;
+
+      font-size: 18px;
+    }
+
+    .about-point span {
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-box {
+      display: grid;
+
+      grid-template-columns:
+        1fr .9fr;
+
+      gap: 30px;
+
+      padding: 45px;
+
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,179,0,.12),
+          rgba(54,163,255,.08)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+    .contact-info h2 {
+      font-size:
+        clamp(34px, 5vw, 50px);
+
+      line-height: 1.05;
+    }
+
+    .contact-info p {
+      margin-top: 15px;
+
+      color: var(--muted);
+    }
+
+    .contact-items {
+      display: grid;
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+    .contact-item {
+      display: flex;
+
+      gap: 14px;
+
+      padding: 17px;
+
+      border-radius: 15px;
+
+      background:
+        rgba(255,255,255,.045);
+    }
+
+    .contact-item b {
+      display: block;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .contact-actions {
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      gap: 14px;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      padding:
+        35px 0
+        100px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.07);
+    }
+
+    .footer-grid {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: #7f8da0;
+
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 20px;
+
+      color: #9aa7b7;
+
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       FLOATING ACTIONS
+       ========================================================= */
+
+    .floating-actions {
+      position: fixed;
+
+      right: 20px;
+      bottom: 20px;
+
+      z-index: 900;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 52px;
+      height: 52px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      font-size: 20px;
+      font-weight: 900;
+
+      box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.3);
+
+      transition: .25s ease;
+    }
+
+    .float-btn:hover {
+      transform:
+        translateY(-4px)
+        scale(1.04);
+    }
+
+    .call {
+      background: #2563eb;
+    }
+
+    .whatsapp {
+      background: #16a34a;
+    }
+
+    /* =========================================================
+       ANIMATIONS
+       ========================================================= */
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform:
+          rotate(-25deg);
+      }
+
+      to {
+        transform:
+          rotate(335deg);
+      }
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .hero-grid,
+      .feature-box,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+      }
+
+      .services-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .products-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.08);
+      }
+    }
+
+    @media (max-width: 760px) {
+
+      .container {
+        width:
+          min(
+            calc(100% - 28px),
+            var(--max)
+          );
+      }
+
+      .nav-links {
+        position: fixed;
+
+        left: 14px;
+        right: 14px;
+        top: 88px;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        border-radius: 20px;
+
+        background:
+          rgba(7,17,31,.97);
+
+        border:
+          1px solid
+          rgba(255,255,255,.1);
+
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-visual {
+        min-height: 370px;
+      }
+
+      .energy-orb {
+        width: 250px;
+        height: 250px;
+      }
+
+      .orbit {
+        width: 315px;
+        height: 315px;
+      }
+
+      .card-one {
+        left: 5px;
+      }
+
+      .card-two {
+        right: 5px;
+      }
+
+      .services-grid,
+      .products-grid,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.08);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .feature-box {
+        padding: 28px;
+      }
+
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 28px;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="container navbar">
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
 
-    <a class="logo" href="#home">
-      <img src="logo.png" alt="Shivaji Technologies">
-    </a>
+  <header>
 
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
-      ☰
-    </button>
+    <div class="container nav">
 
-    <nav id="navMenu">
-      <a href="#home" onclick="closeMenu()">Home</a>
-      <a href="#services" onclick="closeMenu()">Services</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#hours" onclick="closeMenu()">Hours</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-      <a class="nav-btn" href="tel:+916297292425">Call Now</a>
-    </nav>
+      <a href="#home" class="logo">
 
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="container hero-content">
-
-    <div>
-      <div class="badge">⚡ POWER & DIGITAL CENTRE • NABADWIP</div>
-
-      <h1>
-        SHIVAJI
-        <span>TECHNOLOGIES</span>
-      </h1>
-
-      <h2>Power Solutions & Digital Services</h2>
-
-      <p>
-        Battery, Inverter, Solar, E-Rickshaw Battery,
-        Online Services, Printing, Scanning and Digital
-        Services — all under one roof.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="#services">
-          Explore Services →
-        </a>
-
-        <a class="btn btn-white" href="tel:+916297292425">
-          📞 Call Now
-        </a>
-
-        <a class="btn btn-whatsapp"
-           href="https://wa.me/916297292425"
-           target="_blank">
-          💬 WhatsApp
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-
-      <div class="hero-card-title">
-        Our Core Services
-      </div>
-
-      <div class="hero-services">
-
-        <div class="hero-service">
-          <strong>🔋 Battery</strong>
-          <small>Quality battery solutions</small>
+        <div class="logo-mark">
+          ST
         </div>
 
-        <div class="hero-service">
-          <strong>⚡ Inverter</strong>
-          <small>Reliable backup power</small>
-        </div>
-
-        <div class="hero-service">
-          <strong>☀️ Solar</strong>
-          <small>Solar power solutions</small>
-        </div>
-
-        <div class="hero-service">
-          <strong>🛺 E-Rickshaw</strong>
-          <small>Battery sales & service</small>
-        </div>
-
-        <div class="hero-service">
-          <strong>💻 Digital</strong>
-          <small>Online service assistance</small>
-        </div>
-
-        <div class="hero-service">
-          <strong>🖨️ Printing</strong>
-          <small>Print & scan services</small>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- TRUST -->
-<div class="trust">
-  <div class="container trust-grid">
-
-    <div class="trust-item">
-      <div class="trust-icon">🔋</div>
-      <strong>Quality Products</strong>
-      <span>Power products</span>
-    </div>
-
-    <div class="trust-item">
-      <div class="trust-icon">⚡</div>
-      <strong>Power Solutions</strong>
-      <span>Practical solutions</span>
-    </div>
-
-    <div class="trust-item">
-      <div class="trust-icon">💻</div>
-      <strong>Digital Services</strong>
-      <span>Online assistance</span>
-    </div>
-
-    <div class="trust-item">
-      <div class="trust-icon">🤝</div>
-      <strong>Customer Support</strong>
-      <span>Helpful service</span>
-    </div>
-
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-kicker">What We Do</div>
-      <h2>Our Services</h2>
-      <p>
-        Power, Energy & Digital Services — convenient solutions
-        for your everyday needs.
-      </p>
-    </div>
-
-    <div class="service-grid">
-
-      <div class="service-card">
-        <div class="service-icon">🔋</div>
-        <h3>Battery</h3>
-        <p>
-          Battery products and service for different applications.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">⚡</div>
-        <h3>Inverter</h3>
-        <p>
-          Reliable inverter and backup power solutions.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">☀️</div>
-        <h3>Solar</h3>
-        <p>
-          Solar products and power solutions for homes and businesses.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🛺</div>
-        <h3>E-Rickshaw Battery</h3>
-        <p>
-          E-Rickshaw battery sales and service.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">💻</div>
-        <h3>Online Services</h3>
-        <p>
-          Online form fill-up and digital application assistance.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🖨️</div>
-        <h3>Printing & Scanning</h3>
-        <p>
-          Fast printing, scanning and document services.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🪪</div>
-        <h3>PAN Services</h3>
-        <p>
-          PAN-related online assistance and services.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📄</div>
-        <h3>Digital Services</h3>
-        <p>
-          Digital Seva and online service assistance.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-
-  <div class="container about-grid">
-
-    <div class="about-content">
-
-      <div class="section-kicker">About Us</div>
-
-      <h2>
-        Power & Digital Services
-        Under One Roof
-      </h2>
-
-      <p>
-        Shivaji Technologies is a Power & Digital Centre
-        serving customers in Nabadwip and nearby areas.
-      </p>
-
-      <p>
-        We provide power products and convenient digital
-        services from one place with a focus on reliable
-        service and customer satisfaction.
-      </p>
-
-      <div class="check-list">
-        <div class="check">✓ Quality Products</div>
-        <div class="check">✓ Reliable Service</div>
-        <div class="check">✓ Digital & Online Services</div>
-        <div class="check">✓ Customer Support</div>
-      </div>
-
-    </div>
-
-    <div class="about-card">
-
-      <h3>Why Shivaji Technologies?</h3>
-
-      <p>
-        Everything you need in one convenient place —
-        power products, energy solutions and everyday
-        digital services.
-      </p>
-
-      <div class="about-stat">
-
-        <div class="stat">
-          <strong>8+</strong>
-          <span>Service Categories</span>
-        </div>
-
-        <div class="stat">
-          <strong>9AM–8PM</strong>
-          <span>Every Day</span>
-        </div>
-
-        <div class="stat">
-          <strong>Power</strong>
-          <span>Energy Solutions</span>
-        </div>
-
-        <div class="stat">
-          <strong>Digital</strong>
-          <span>Online Services</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- WHY -->
-<section class="why">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-kicker">Why Choose Us</div>
-      <h2>A Convenient One-Stop Centre</h2>
-      <p>
-        Practical solutions for home, business, vehicles
-        and everyday digital needs.
-      </p>
-    </div>
-
-    <div class="why-grid">
-
-      <div class="why-card">
-        <div class="why-number">01 / ONE STOP</div>
-        <h3>One Stop Centre</h3>
-        <p>
-          Power products and digital services available
-          from one convenient location.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-number">02 / SUPPORT</div>
-        <h3>Customer Focused</h3>
-        <p>
-          We aim to provide helpful and reliable service
-          to every customer.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-number">03 / SOLUTIONS</div>
-        <h3>Practical Solutions</h3>
-        <p>
-          Solutions for home, business, vehicles and
-          everyday digital needs.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- HOURS -->
-<section class="hours" id="hours">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-kicker">Visit Us</div>
-      <h2 style="color:#fff;">We're Ready to Help</h2>
-      <p style="color:#c7d3e7;">
-        Visit our shop for power and digital services.
-      </p>
-    </div>
-
-    <div class="hours-grid">
-
-      <div class="hours-card">
-        <h3>🟢 Business Hours</h3>
-        <div class="hours-time">9:00 AM – 8:00 PM</div>
-        <p>
-          Open every day for power and digital services.
-        </p>
-      </div>
-
-      <div class="hours-card">
-        <h3>📍 Shop Location</h3>
-        <p>
-          Sarkar Para Road,<br>
-          Near Nabadwip Court,<br>
-          Nabadwip, Nadia,<br>
-          West Bengal - 741302
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-kicker">Get In Touch</div>
-      <h2>Contact Shivaji Technologies</h2>
-      <p>
-        We are happy to help you with power and digital services.
-      </p>
-    </div>
-
-    <div class="contact-grid">
-
-      <div class="contact-card">
-        <div class="contact-icon">📍</div>
         <div>
-          <h3>Address</h3>
+          <div>Shivaji</div>
+          <small
+            style="
+              color:#8fa0b5;
+              font-size:10px;
+              letter-spacing:1.5px;
+              text-transform:uppercase;
+            ">
+            Technologies
+          </small>
+        </div>
+
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#solutions">
+          Solutions
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
+      <a
+        href="tel:+919876543210"
+        class="nav-btn">
+        Call Now
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open Menu">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section
+      class="hero"
+      id="home">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            <span></span>
+            Power & Digital Solutions
+          </div>
+
+          <h1>
+            Powering Your
+            <span class="gradient-text">
+              Future.
+            </span>
+          </h1>
+
           <p>
-            Sarkar Para Road, Near Nabadwip Court,
-            Nabadwip, Nadia, West Bengal - 741302
+            Reliable batteries, inverters, solar solutions,
+            e-rickshaw batteries and professional digital
+            services — all from one trusted destination.
           </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="#services"
+              class="btn btn-primary">
+              Explore Services →
+            </a>
+
+            <a
+              href="#contact"
+              class="btn btn-secondary">
+              Contact Us
+            </a>
+
+          </div>
+
+          <div class="hero-trust">
+
+            <div>
+              <span class="check">✓</span>
+              Quality Products
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              Reliable Support
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              Local Service
+            </div>
+
+          </div>
+
         </div>
+
+
+        <div class="hero-visual">
+
+          <div class="orbit"></div>
+
+          <div class="energy-orb"></div>
+
+          <div class="floating-card card-one">
+
+            <strong>
+              ⚡ Power
+            </strong>
+
+            <small>
+              Battery & Inverter
+            </small>
+
+          </div>
+
+          <div class="floating-card card-two">
+
+            <strong>
+              ☀ Solar
+            </strong>
+
+            <small>
+              Smart Energy Solutions
+            </small>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="contact-card">
-        <div class="contact-icon">📞</div>
-        <div>
-          <h3>Phone</h3>
-          <a href="tel:+916297292425">
-            +91 62972 92425
-          </a>
+    </section>
+
+
+    <!-- =====================================================
+         STATS
+         ===================================================== -->
+
+    <section class="stats">
+
+      <div class="container stats-grid">
+
+        <div class="stat">
+          <strong>01</strong>
+          <span>
+            One Stop Centre
+          </span>
         </div>
+
+        <div class="stat">
+          <strong>08+</strong>
+          <span>
+            Service Categories
+          </span>
+        </div>
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>
+            Digital Accessibility
+          </span>
+        </div>
+
+        <div class="stat">
+          <strong>100%</strong>
+          <span>
+            Customer Focus
+          </span>
+        </div>
+
       </div>
 
-      <div class="contact-card">
-        <div class="contact-icon">✉️</div>
-        <div>
-          <h3>Email</h3>
-          <a href="mailto:technologiesshivaji@gmail.com">
-            technologiesshivaji@gmail.com
-          </a>
-        </div>
-      </div>
+    </section>
 
-      <div class="contact-card">
-        <div class="contact-icon">🕘</div>
-        <div>
-          <h3>Opening Hours</h3>
+
+    <!-- =====================================================
+         SERVICES
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="services">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-label">
+            What We Do
+          </div>
+
+          <h2>
+            Everything You Need,
+            <span class="gradient-text">
+              In One Place.
+            </span>
+          </h2>
+
           <p>
-            Every Day<br>
-            9:00 AM – 8:00 PM
+            From everyday power requirements to modern
+            digital services, Shivaji Technologies brings
+            multiple solutions together under one roof.
           </p>
+
         </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card">
+
+            <span class="service-number">
+              01
+            </span>
+
+            <div class="service-icon">
+              🔋
+            </div>
+
+            <h3>
+              Battery Solutions
+            </h3>
+
+            <p>
+              Reliable battery solutions for home,
+              commercial and mobility requirements.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              02
+            </span>
+
+            <div class="service-icon">
+              ⚡
+            </div>
+
+            <h3>
+              Inverter Solutions
+            </h3>
+
+            <p>
+              Backup power solutions designed for
+              homes, shops and businesses.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              03
+            </span>
+
+            <div class="service-icon">
+              ☀️
+            </div>
+
+            <h3>
+              Solar Solutions
+            </h3>
+
+            <p>
+              Explore smarter renewable-energy options
+              for everyday power needs.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              04
+            </span>
+
+            <div class="service-icon">
+              🛺
+            </div>
+
+            <h3>
+              E-Rickshaw Battery
+            </h3>
+
+            <p>
+              Battery solutions for electric mobility
+              and e-rickshaw applications.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              05
+            </span>
+
+            <div class="service-icon">
+              💻
+            </div>
+
+            <h3>
+              Online Services
+            </h3>
+
+            <p>
+              Convenient digital assistance for
+              everyday online requirements.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              06
+            </span>
+
+            <div class="service-icon">
+              🖨️
+            </div>
+
+            <h3>
+              Printing & Scanning
+            </h3>
+
+            <p>
+              Professional printing, scanning and
+              document-related services.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              07
+            </span>
+
+            <div class="service-icon">
+              🪪
+            </div>
+
+            <h3>
+              PAN Services
+            </h3>
+
+            <p>
+              Assistance with PAN-related digital
+              service requirements.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              08
+            </span>
+
+            <div class="service-icon">
+              🌐
+            </div>
+
+            <h3>
+              Digital Services
+            </h3>
+
+            <p>
+              Practical digital solutions for individuals,
+              families and local businesses.
+            </p>
+
+          </article>
+
+        </div>
+
       </div>
 
-    </div>
+    </section>
 
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta">
+    <!-- =====================================================
+         POWER / SOLAR FEATURE
+         ===================================================== -->
 
-  <div class="container">
+    <section
+      class="feature"
+      id="solutions">
 
-    <div class="cta-box">
+      <div class="container feature-box">
+
+        <div class="feature-copy">
+
+          <div class="section-label">
+            Energy Solutions
+          </div>
+
+          <h2>
+            Smarter Energy.
+            Better
+            <span class="gradient-text">
+              Possibilities.
+            </span>
+          </h2>
+
+          <p>
+            Whether you need dependable backup power,
+            battery support or renewable-energy options,
+            our solutions are designed around practical
+            everyday requirements.
+          </p>
+
+          <div class="feature-list">
+
+            <div>
+              <span class="check">✓</span>
+
+              <div>
+                <b>
+                  Home Power
+                </b>
+
+                <span>
+                  Backup solutions for essential
+                  household requirements.
+                </span>
+              </div>
+
+            </div>
+
+
+            <div>
+              <span class="check">✓</span>
+
+              <div>
+                <b>
+                  Business Power
+                </b>
+
+                <span>
+                  Reliable support for shops,
+                  offices and commercial use.
+                </span>
+              </div>
+
+            </div>
+
+
+            <div>
+              <span class="check">✓</span>
+
+              <div>
+                <b>
+                  Solar Energy
+                </b>
+
+                <span>
+                  Explore cleaner and smarter energy
+                  possibilities.
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="feature-visual">
+
+          <div class="solar-panel">
+
+            <div class="solar-grid">
+
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRODUCTS
+         ===================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-label">
+            Product Categories
+          </div>
+
+          <h2>
+            Built Around Your
+            <span class="gradient-text">
+              Needs.
+            </span>
+          </h2>
+
+          <p>
+            Discover solutions across power, mobility
+            and digital services.
+          </p>
+
+        </div>
+
+
+        <div class="products-grid">
+
+          <div class="product-card">
+
+            <div class="product-visual">
+              🔋
+            </div>
+
+            <div>
+              <h3>
+                Battery & Backup
+              </h3>
+
+              <p>
+                Power backup solutions for everyday
+                requirements.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="product-card">
+
+            <div class="product-visual">
+              ☀️
+            </div>
+
+            <div>
+              <h3>
+                Solar & Renewable
+              </h3>
+
+              <p>
+                Modern energy solutions for a smarter
+                tomorrow.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="product-card">
+
+            <div class="product-visual">
+              🛺
+            </div>
+
+            <div>
+              <h3>
+                E-Mobility
+              </h3>
+
+              <p>
+                Battery support for electric mobility
+                applications.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="about">
+
+      <div class="container about-grid">
+
+        <div>
+
+          <div class="section-label">
+            About Shivaji Technologies
+          </div>
+
+          <h2>
+            One Destination.
+            Multiple
+            <span class="gradient-text">
+              Solutions.
+            </span>
+          </h2>
+
+          <p
+            style="
+              margin-top:20px;
+              color:var(--muted);
+            ">
+
+            Shivaji Technologies is positioned as a
+            practical one-stop centre combining power
+            products, energy solutions and essential
+            digital services.
+
+          </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+          <h3>
+            Why Choose Us?
+          </h3>
+
+          <p>
+            We focus on making products and services
+            easier to access while providing practical
+            assistance to our customers.
+          </p>
+
+          <div class="about-points">
+
+            <div class="about-point">
+
+              <strong>
+                Quality
+              </strong>
+
+              <span>
+                Focus on dependable solutions
+              </span>
+
+            </div>
+
+
+            <div class="about-point">
+
+              <strong>
+                Reliability
+              </strong>
+
+              <span>
+                Service you can depend on
+              </span>
+
+            </div>
+
+
+            <div class="about-point">
+
+              <strong>
+                Convenience
+              </strong>
+
+              <span>
+                Multiple services in one place
+              </span>
+
+            </div>
+
+
+            <div class="about-point">
+
+              <strong>
+                Support
+              </strong>
+
+              <span>
+                Customer-focused assistance
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="contact">
+
+      <div class="container contact-box">
+
+        <div class="contact-info">
+
+          <div class="section-label">
+            Get In Touch
+          </div>
+
+          <h2>
+            Let's Power Your
+            <span class="gradient-text">
+              Next Move.
+            </span>
+          </h2>
+
+          <p>
+            Need a battery, inverter, solar solution,
+            e-rickshaw battery or digital service?
+            Contact Shivaji Technologies.
+          </p>
+
+
+          <div class="contact-items">
+
+            <div class="contact-item">
+
+              <div>
+                📍
+              </div>
+
+              <div>
+                <b>
+                  Location
+                </b>
+
+                <span>
+                  Nabadwip, West Bengal, India
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div>
+                📞
+              </div>
+
+              <div>
+                <b>
+                  Phone
+                </b>
+
+                <span>
+                  Contact us for service information
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div>
+                🕒
+              </div>
+
+              <div>
+                <b>
+                  Business Hours
+                </b>
+
+                <span>
+                  Please check current business hours
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-actions">
+
+          <!--
+            IMPORTANT:
+            Replace the phone number below with
+            your real Shivaji Technologies number.
+          -->
+
+          <a
+            href="tel:+9162972 92425"
+            class="btn btn-primary">
+
+            📞 Call Shivaji Technologies
+
+          </a>
+
+
+          <!--
+            Replace 919876543210 with your
+            actual WhatsApp number.
+          -->
+
+          <a
+            href="https://wa.me/919876543210"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary">
+
+            💬 WhatsApp Us
+
+          </a>
+
+
+          <a
+            href="https://maps.google.com/?q=Nabadwip,West+Bengal,India"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary">
+
+            📍 Get Directions
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <div class="container footer-grid">
 
       <div>
-        <h2>Need Power or Digital Services?</h2>
-        <p>
-          Contact Shivaji Technologies today.
+
+        <a href="#home" class="logo">
+
+          <div class="logo-mark">
+            ST
+          </div>
+
+          <div>
+            Shivaji Technologies
+          </div>
+
+        </a>
+
+        <p class="footer-copy"
+           style="margin-top:10px;">
+
+          Power • Solar • Digital Solutions
+
         </p>
+
       </div>
 
-      <div class="hero-buttons" style="margin-top:0;">
 
-        <a class="btn btn-primary"
-           href="tel:+916297292425">
-          📞 Call Now
+      <div class="footer-links">
+
+        <a href="#services">
+          Services
         </a>
 
-        <a class="btn btn-whatsapp"
-           href="https://wa.me/916297292425"
-           target="_blank">
-          💬 WhatsApp
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
         </a>
 
       </div>
 
     </div>
 
-  </div>
 
-</section>
+    <div
+      class="container"
+      style="
+        margin-top:25px;
+        padding-top:20px;
+        border-top:
+          1px solid
+          rgba(255,255,255,.06);
+      ">
 
-<!-- FOOTER -->
-<footer>
+      <p class="footer-copy">
 
-  <div class="container footer-grid">
+        © <span id="year"></span>
+        Shivaji Technologies.
+        All Rights Reserved.
 
-    <div>
-      <div class="footer-logo">
-        <img src="logo.png" alt="Shivaji Technologies">
-      </div>
-
-      <p>
-        Power & Digital Centre serving Nabadwip and
-        nearby areas with power products and digital
-        services.
       </p>
+
     </div>
 
-    <div>
-      <h3>Quick Links</h3>
+  </footer>
 
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#hours">Hours</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
 
-    <div>
-      <h3>Contact</h3>
+  <!-- =======================================================
+       FLOATING CALL / WHATSAPP
+       ======================================================= -->
 
-      <div class="footer-links">
-        <a href="tel:+916297292425">📞 +91 62972 92425</a>
-        <a href="mailto:technologiesshivaji@gmail.com">
-          ✉️ Email Us
-        </a>
-        <a href="https://wa.me/916297292425" target="_blank">
-          💬 WhatsApp
-        </a>
-      </div>
-    </div>
+  <div class="floating-actions">
+
+    <a
+      class="float-btn call"
+      href="tel:+919876543210"
+      aria-label="Call">
+      ☎
+    </a>
+
+    <a
+      class="float-btn whatsapp"
+      href="https://wa.me/919876543210"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp">
+      💬
+    </a>
 
   </div>
 
-  <div class="container copyright">
-    © 2026 Shivaji Technologies. All Rights Reserved.
-    <br>
-    Power & Digital Centre • Nabadwip, Nadia, West Bengal
-  </div>
 
-</footer>
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
 
-<!-- FLOATING WHATSAPP -->
-<a class="whatsapp"
-   href="https://wa.me/916297292425"
-   target="_blank"
-   aria-label="WhatsApp">
-  💬
-</a>
+  <script>
 
-<script>
-function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("active");
-}
+    /* Mobile Navigation */
 
-function closeMenu(){
-  document.getElementById("navMenu").classList.remove("active");
-}
-</script>
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.toggle(
+          "active"
+        );
+
+      }
+    );
+
+
+    /* Close menu after clicking link */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            navLinks.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+      });
+
+
+    /* Current Year */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+
+    /* Header background on scroll */
+
+    const header =
+      document.querySelector("header");
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (window.scrollY > 30) {
+
+          header.style.background =
+            "rgba(5,13,24,.94)";
+
+        } else {
+
+          header.style.background =
+            "rgba(7,17,31,.72)";
+
+        }
+
+      }
+    );
+
+
+    /* Reveal animation */
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.style.opacity = "1";
+
+              entry.target.style.transform =
+                "translateY(0)";
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: .12
+        }
+      );
+
+
+    document
+      .querySelectorAll(
+        ".service-card, .product-card, .about-card, .stat"
+      )
+      .forEach(element => {
+
+        element.style.opacity = "0";
+
+        element.style.transform =
+          "translateY(25px)";
+
+        element.style.transition =
+          "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+      });
+
+  </script>
 
 </body>
 </html>
