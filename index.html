@@ -128,6 +128,333 @@ nav a:hover{
   cursor:pointer;
 }
 
+  /* =========================================
+   MOBILE OVERFLOW FIX
+   Shivaji Technologies
+========================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+* {
+  max-width: 100%;
+}
+
+/* Prevent grid children from forcing page width */
+
+.container,
+.hero-content,
+.about-grid,
+.about-content,
+.about-card,
+.service-grid,
+.why-grid,
+.hours-grid,
+.contact-grid,
+.business-info-grid,
+.footer-grid {
+  min-width: 0;
+}
+
+/* ================= ABOUT MOBILE ================= */
+
+.about-content {
+  min-width: 0;
+}
+
+.about-content h2 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.about-content p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.check-list {
+  width: 100%;
+  min-width: 0;
+}
+
+.check {
+  min-width: 0;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+
+/* ================= ABOUT CARD ================= */
+
+.about-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.about-card h3,
+.about-card p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+
+/* ================= STATS ================= */
+
+.about-stat {
+  width: 100%;
+  min-width: 0;
+}
+
+.stat {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.stat strong,
+.stat span {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* ================= GSTIN FIX ================= */
+
+.gstin-value {
+  max-width: 100%;
+  overflow-wrap: anywhere !important;
+  word-break: break-all !important;
+  white-space: normal !important;
+}
+
+
+/* ================= BUSINESS INFO ================= */
+
+.business-info-grid {
+  width: 100%;
+  min-width: 0;
+}
+
+.business-info-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.business-info-card > div:last-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.business-info-card h3,
+.business-info-card p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-card {
+  min-width: 0;
+  width: 100%;
+}
+
+.contact-card > div:last-child {
+  min-width: 0;
+}
+
+.contact-card p,
+.contact-card a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 680px) {
+
+  .container {
+    width: calc(100% - 32px);
+    max-width: 100%;
+  }
+
+  /* About */
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: 36px;
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+
+  /* Experience card */
+
+  .about-card {
+    width: 100%;
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+
+  .about-card h3 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .about-card p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+
+  /* IMPORTANT:
+     Stats become single column on mobile
+     so GSTIN cannot overflow.
+  */
+
+  .about-stat {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .stat {
+    width: 100%;
+    min-width: 0;
+    padding: 17px;
+  }
+
+  .stat strong {
+    font-size: 23px;
+  }
+
+
+  /* Business information */
+
+  .business-info-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .business-info-card {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .business-info-card h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+
+  /* Service area */
+
+  .service-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-card {
+    min-width: 0;
+  }
+
+
+  /* Contact */
+
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-card {
+    min-width: 0;
+  }
+
+
+  /* Hero */
+
+  .hero-content {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .hero-text {
+    min-width: 0;
+  }
+
+  .hero h1,
+  .hero h2,
+  .hero p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-services {
+    width: 100%;
+  }
+
+}
+
+
+/* ================= VERY SMALL MOBILE ================= */
+
+@media (max-width: 400px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+  }
+
+  .about-card h3 {
+    font-size: 25px;
+  }
+
+  .business-info-card {
+    padding: 20px 17px;
+  }
+
+  .business-info-icon {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+}
+  
 /* ================= HERO ================= */
 
 .hero{
@@ -953,10 +1280,11 @@ footer{
       </p>
 
       <div class="experience-badge">
-        <span class="experience-icon">🏆</span>
+        
 
         <div>
            <span class="experience-icon">🏆</span> <strong>9+ YEARS OF EXPERIENCE</strong>
+          
           <small>Trusted Power & Digital Services</small>
         </div>
       </div>
