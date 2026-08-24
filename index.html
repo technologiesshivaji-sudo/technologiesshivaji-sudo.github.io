@@ -150,10 +150,23 @@ nav a:hover{color:var(--orange)}
 .contact-card h3{color:var(--navy);font-size:16px;margin-bottom:6px}
 .contact-card p,.contact-card a{color:var(--muted);font-size:14px;line-height:1.6;overflow-wrap:anywhere}
 
-.map-card{margin-top:22px;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 10px 35px rgba(4,18,48,.06)}
-.map-card iframe{display:block;width:100%;height:350px;border:0}
-.map-actions{display:flex;gap:12px;flex-wrap:wrap;padding:18px;background:#fff}
-.map-actions .btn{min-height:46px}
+.map-card{margin-top:28px;border:1px solid rgba(7,20,47,.10);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 22px 60px rgba(4,18,48,.14)}
+.map-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 26px;background:linear-gradient(135deg,#07142f,#123b82);color:#fff}
+.map-heading-left{display:flex;align-items:center;gap:14px;min-width:0}
+.map-pin{width:48px;height:48px;flex:0 0 48px;border-radius:15px;background:rgba(255,173,0,.16);border:1px solid rgba(255,193,58,.35);display:flex;align-items:center;justify-content:center;font-size:23px}
+.map-heading strong{display:block;color:#fff;font-size:18px;line-height:1.3}
+.map-heading span{display:block;color:#cbd8eb;font-size:13px;margin-top:5px;line-height:1.5}
+.map-status{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:9px 12px;border-radius:999px;background:rgba(32,199,106,.12);border:1px solid rgba(32,199,106,.25);color:#9ff0c2;font-size:12px;font-weight:800}
+.map-status i{width:8px;height:8px;border-radius:50%;background:#20c76a;box-shadow:0 0 0 4px rgba(32,199,106,.12)}
+.map-frame{position:relative;background:#e9eef5}
+.map-card iframe{display:block;width:100%;height:430px;border:0}
+.map-overlay{position:absolute;left:18px;bottom:18px;z-index:2;max-width:340px;padding:14px 16px;border-radius:15px;background:rgba(7,20,47,.92);color:#fff;box-shadow:0 12px 30px rgba(0,0,0,.20);pointer-events:none}
+.map-overlay strong{display:block;font-size:14px;margin-bottom:4px}
+.map-overlay span{display:block;color:#d4deed;font-size:12px;line-height:1.5}
+.map-actions{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px;padding:20px;background:#fff}
+.map-action{min-height:52px!important;border-radius:12px!important}
+.map-action .action-icon{font-size:18px}
+.map-note{padding:0 20px 20px;color:#667085;font-size:12px;text-align:center}
 
 .cta{padding:30px 0 80px}
 .cta-box{background:linear-gradient(135deg,#07142f,#123b82);color:#fff;border-radius:25px;padding:45px;display:flex;align-items:center;justify-content:space-between;gap:25px}
@@ -247,6 +260,18 @@ footer{background:#050d20;color:#fff;padding:50px 0 25px}
 html,body{width:100%;max-width:100%;overflow-x:hidden!important}
 .container,.hero-content,.about-grid,.about-content,.about-card,.service-grid,.why-grid,.hours-grid,.contact-grid,.business-info-grid,.footer-grid,.growth-grid,.digital-service-grid,.pricing-grid,.portfolio-grid{min-width:0}
 .gstin-value{max-width:100%;overflow-wrap:anywhere!important;word-break:break-all!important;white-space:normal!important}
+
+@media(max-width:680px){
+  .map-heading{padding:20px 18px;align-items:flex-start}
+  .map-status{display:none}
+  .map-heading strong{font-size:16px}
+  .map-heading span{font-size:12px}
+  .map-card iframe{height:330px}
+  .map-overlay{left:12px;right:12px;bottom:12px;max-width:none}
+  .map-actions{grid-template-columns:1fr;padding:14px}
+  .map-action{width:100%!important}
+  .map-note{padding:0 14px 16px}
+}
 
 @media(max-width:900px){
   .service-grid{grid-template-columns:repeat(2,1fr)}
@@ -757,19 +782,43 @@ html,body{width:100%;max-width:100%;overflow-x:hidden!important}
     </div>
 
     <div class="map-card">
-      <iframe
-        src="https://www.google.com/maps?q=81%2F1%20Sarkar%20Para%20Road%2C%20Nabadwip%2C%20Nadia%2C%20West%20Bengal%20741302&output=embed"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Shivaji Technologies Map">
-      </iframe>
+      <div class="map-heading">
+        <div class="map-heading-left">
+          <div class="map-pin">📍</div>
+          <div>
+            <strong>Find Shivaji Technologies</strong>
+            <span>Visit our shop in Nabadwip for Power & Digital Services.</span>
+          </div>
+        </div>
+        <div class="map-status"><i></i> Shop Location</div>
+      </div>
+
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=81%2F1%20Sarkar%20Para%20Road%2C%20Near%20Nabadwip%20Court%2C%20Nabadwip%2C%20Nadia%2C%20West%20Bengal%20741302&output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Shivaji Technologies Shop Location">
+        </iframe>
+        <div class="map-overlay">
+          <strong>📍 Shivaji Technologies</strong>
+          <span>81/1 Sarkar Para Road, Near Nabadwip Court, Nabadwip, Nadia, West Bengal - 741302</span>
+        </div>
+      </div>
 
       <div class="map-actions">
-        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=81%2F1%20Sarkar%20Para%20Road%2C%20Nabadwip%2C%20Nadia%2C%20West%20Bengal%20741302" target="_blank">📍 Get Directions</a>
-        <a class="btn btn-white" href="tel:+916297292425">📞 Call Now</a>
-        <a class="btn btn-whatsapp" href="https://wa.me/916297292425" target="_blank">💬 WhatsApp</a>
+        <a class="btn btn-primary map-action" href="https://maps.app.goo.gl/RpUHhsz3syXyxtFdA" target="_blank" rel="noopener">
+          <span class="action-icon">📍</span> Get Directions
+        </a>
+        <a class="btn btn-white map-action" href="tel:+916297292425">
+          <span class="action-icon">📞</span> Call Now
+        </a>
+        <a class="btn btn-whatsapp map-action" href="https://wa.me/916297292425?text=Hello%20Shivaji%20Technologies%2C%20I%20want%20to%20visit%20your%20shop." target="_blank" rel="noopener">
+          <span class="action-icon">💬</span> WhatsApp
+        </a>
       </div>
+      <div class="map-note">Tap “Get Directions” to open your exact Google Maps shop location.</div>
     </div>
   </div>
 </section>
